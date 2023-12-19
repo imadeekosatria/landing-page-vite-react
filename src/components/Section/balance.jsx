@@ -62,7 +62,7 @@ const Balance =()=>{
                 <span className="font-semibold text-4xl">$564</span>
                 <div className="flex gap-x-2 items-center">
                   <img src={wallet} alt="wallet image" className="w-16 xl:w-5/12"/>
-                  <span className="break-words tracking-wide xl:text-3xl">Your total balance</span>
+                  <span className="break-words tracking-wide 2xl:text-3xl">Your total balance</span>
                 </div>
                 <hr />
                 <div className="flex items-center gap-x-2">

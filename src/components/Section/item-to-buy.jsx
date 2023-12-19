@@ -5,11 +5,12 @@ import {
   } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ItemCheckBox from "../ui/item-checkbox";
+import SectionChat from "./section-chat";
 
 const ItemToBuy = ()=>{
     return (
-        <Card className="min-w-full bg-white h-fit flex gap-x-4">
-              <div className="w-2/5 h-56">
+        <Card className="min-w-full bg-white flex gap-x-4">
+              <div className="w-2/4 h-56 flex flex-col gap-y-4">
                 <CardTitle>List of items to buy</CardTitle>
                 <div className="flex gap-8 items-center mb-4">
                   <div className="flex flex-col">
@@ -28,16 +29,19 @@ const ItemToBuy = ()=>{
                     <span className="text-slate-300">0/3</span><span className="font-medium">Shopping list</span>
                     </div>
                   </div>
-                  <button className="font-medium flex gap-x-2 items-center"><FontAwesomeIcon icon={faPlus} />Add an item</button>
+                  <button className="font-medium flex gap-x-2 items-center "><FontAwesomeIcon icon={faPlus} />Add an item</button>
                 </div>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-4 w-full justify-between">
                     <ItemCheckBox props={{text: 'Macbook', check: true}}/>
+                    <ItemCheckBox props={{text: 'Bicycle', check: false}}/>
+                    <ItemCheckBox props={{text: 'Motorcycle', check: false}}/>
+                    <ItemCheckBox props={{text: 'Iphone 14 pro max', check: true}}/>
                 </div>
               </div>
               <span className="bg-slate-300 h-auto w-0.5 rounded-full"></span>
-              <div className="col-span-5">
+              <div className="w-2/4 flex flex-col gap-4">
                 <CardTitle>Esther Howard</CardTitle>
-
+                <SectionChat/>
               </div>
           </Card>
     )
