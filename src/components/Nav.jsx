@@ -10,12 +10,12 @@ const Nav = () => {
   const tooltipPosition = Position.RIGHT;
   return (
     <>
-      <nav className="col-start-1 min-h-screen w-24 bg-white text-center py-4 grid-rows-6">
-        <div className="row-span-2 flex flex-col justify-between h-28">
+      <nav className="col-start-1 min-h-screen w-24 bg-white text-center py-4 ">
+        <div className=" flex flex-col justify-between h-28">
           <Logo props={{ text: "S.", tooltip: tooltipPosition }} />
           <Chat prop={{ tooltip: tooltipPosition }} />
         </div>
-        <div className="row-span-3 py-[1.5rem] flex flex-col items-center">
+        <div className=" py-[1.5rem] flex flex-col items-center">
           <Link prop={{ tooltip: tooltipPosition }} />
         </div>
         <div className="flex flex-col items-center gap-4">
