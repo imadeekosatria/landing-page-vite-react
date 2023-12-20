@@ -1,31 +1,28 @@
-import {
-  faMagnifyingGlass,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Balance from "./Section/balance";
-import Visa from "./Section/visa";
-import ItemToBuy from "./Section/item-to-buy";
-import Transaction from "./Section/transaction";
-import Analytic from "./Section/analytic";
+import Balance from "./Section/balance"
+import Visa from "./Section/visa"
+import ItemToBuy from "./Section/item-to-buy"
+import Transaction from "./Section/transaction"
+import Analytic from "./Section/analytic"
+import Search from "./Section/search"
+import { PropTypes } from "prop-types"
 
 
-const Section = () => {
+
+const Section = ({prop}) => {
+  const {name} = prop
   return (
     <>
-      <main className="col-span-9 2xl:col-span-15 w-full p-4 h-screen overflow-y-auto overscroll-y-auto">
+      <main className="col-span-8 2xl:col-span-14 w-full p-4 min-h-screen overflow-y-auto overscroll-y-auto">
         <header className="flex justify-between mb-4 items-center">
           <div>
-            <h1 className="text-3xl font-semibold">Hello, Jhon .D</h1>
+            <h1 className="text-3xl font-semibold">Hello, {name}</h1>
             <span>View and control your finances here!</span>
           </div>
-          <FontAwesomeIcon
-            icon={faMagnifyingGlass}
-            className="bg-white p-4 rounded-full hover:bg-slate-100 cursor-pointer"
-          />
+          <Search/>
         </header>
         <div className="flex flex-wrap gap-4 justify-between">
           <Balance/>
-          <Visa/>
+          <Visa prop={{name: name, validDate: '08/12'}}/>
           <ItemToBuy/>
           <Transaction/>
           <Analytic/>
@@ -34,5 +31,11 @@ const Section = () => {
     </>
   );
 };
+
+Section.propTypes ={
+  name: PropTypes.string,
+  prop: PropTypes.object
+}
+
 
 export default Section;

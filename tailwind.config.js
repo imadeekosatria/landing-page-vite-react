@@ -11,7 +11,7 @@ export default {
         'xl': 'repeat(18, minmax(0, 1fr))',
       },
       gridColumn: {
-        'span-15': 'span 15 / span 15',
+        'span-14': 'span 14 / span 14',
       }
     },
   },

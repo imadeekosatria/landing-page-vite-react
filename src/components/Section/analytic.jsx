@@ -1,31 +1,11 @@
-import { Card, CardTitle } from "../ui/card"
-import { Popover, Menu, EditIcon, ResetIcon } from "evergreen-ui"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons"
-import RadialChart from "../ui/radial"
+import { Card, CardOption, CardTitle } from "../ui/card"
+import RadialChart from "../ui/radial-chart"
 const Analytic = ()=>{
     return (
-        <Card className="bg-white w-auto flex-grow">
+        <Card className="bg-white max-2xl:w-80">
             <div className="flex justify-between">
                 <CardTitle>Analytics</CardTitle>
-                <Popover
-                    content={
-                    <Menu>
-                        <Menu.Group>
-                        <Menu.Item icon={EditIcon} secondaryText="⌘R">
-                            Rename...
-                        </Menu.Item>
-                        </Menu.Group>
-                        <Menu.Group>
-                        <Menu.Item icon={ResetIcon} >
-                            Reset...
-                        </Menu.Item>
-                        </Menu.Group>
-                    </Menu>
-                    }
-                >
-                    <FontAwesomeIcon icon={faEllipsisVertical} />
-                </Popover>
+                <CardOption/>
             </div>
             <RadialChart/>
         </Card>

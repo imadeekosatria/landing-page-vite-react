@@ -1,13 +1,16 @@
 import { Card } from "../ui/card";
 import man from "../../assets/man-pushing-dollar-coin.svg"
-const Visa = ()=>{
+import { PropTypes } from "prop-types"
+
+const Visa = ({prop})=>{
+    const {name, validDate} = prop
     return (
-        <Card className="bg-indigo-500 w-[27rem] relative">
+        <Card className="bg-indigo-500 w-[24rem] relative">
             <div className="w-full h-full flex justify-center relative items-center">
               <img src={man} alt="man push dolar"></img>
             </div>
-            <div className="absolute top-0 flex flex-col h-full py-4 justify-between">
-              <div className="flex justify-between w-[25rem] px-4 items-center">
+            <div className="absolute top-0 left-0 flex flex-col h-full w-full py-4 justify-between">
+              <div className="flex justify-between w-full px-4 items-center">
                 <span className="text-white font-medium text-4xl">S.</span>
                 <div className="w-16 fill-white">
                   <svg
@@ -25,13 +28,18 @@ const Visa = ()=>{
               <div className="px-4 text-white">
                 <span className="font-medium">**** 9838</span>
                 <div className="flex justify-between">
-                  <span>Jhon Demon</span>
-                  <span>08/12</span>
+                  <span>{name}</span>
+                  <span>{validDate}</span>
                 </div>
               </div>
             </div>
         </Card>
     )
+}
+Visa.propTypes = {
+  prop: PropTypes.object,
+  name: PropTypes.string,
+  validDate: PropTypes.string
 }
 
 export default Visa

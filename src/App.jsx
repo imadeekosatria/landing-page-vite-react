@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Nav />
-      <Section />
+      <Section prop={{name: 'Jhon .D'}}/>
       <Sidebar />
     </>
   );

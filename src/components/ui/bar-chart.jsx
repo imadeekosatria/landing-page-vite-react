@@ -29,7 +29,7 @@ const BarChartSection = () => {
   ];
   return (
     <ResponsiveContainer>
-      <BarChart width={300} height={200} data={data}>
+      <BarChart width={300} height={200} data={data} >
         <XAxis dataKey="month" axisLine={false} tickLine={false} />
         <YAxis
           axisLine={false}

@@ -1,6 +1,6 @@
 import TinyChart from "../ui/tiny-chart";
 import BarChartSection from "../ui/bar-chart";
-import { Popover, Menu, Position, toaster } from "evergreen-ui";
+import { Popover, Menu, Position, toaster, Tooltip } from "evergreen-ui";
 import {
     faChevronDown,
     faCircleArrowUp,
@@ -11,7 +11,7 @@ import wallet from '../../assets/wallet.svg'
 
 const Balance =()=>{
     return (
-        <Card className="bg-white w-[32rem] flex-grow">
+        <Card className="bg-white w-[28rem] flex-grow">
             <div className="flex justify-between ">
               <CardTitle>Balance statistics</CardTitle>
               <Popover
@@ -48,13 +48,15 @@ const Balance =()=>{
                   </Menu>
                 }
               >
-                <button className="bg-gray-100 p-2 rounded-lg hover:bg-gray-300 flex justify-between gap-x-2 items-center">
-                  Filter
-                  <FontAwesomeIcon
-                    icon={faChevronDown}
-                    style={{ color: "bg-slate-950" }}
-                  />
-                </button>
+                <Tooltip content="Filter">
+                  <button className="bg-gray-100 p-2 rounded-lg hover:bg-gray-300 flex justify-between gap-x-2 items-center">
+                    Filter
+                    <FontAwesomeIcon
+                      icon={faChevronDown}
+                      style={{ color: "bg-slate-950" }}
+                    />
+                  </button>
+                </Tooltip>
               </Popover>
             </div>
             <div className="grid grid-cols-3 gap-x-1">

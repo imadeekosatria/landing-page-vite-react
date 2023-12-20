@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types"
-import { Popover, Menu, TrashIcon } from "evergreen-ui"
+import { Popover, Menu, TrashIcon, Tooltip } from "evergreen-ui"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 const TransactionList = ({ props }) => {
@@ -26,7 +26,9 @@ const TransactionList = ({ props }) => {
               </Menu>
             }
           >
-            <FontAwesomeIcon icon={faEllipsisVertical} />
+            <Tooltip content="Option">
+              <FontAwesomeIcon icon={faEllipsisVertical} />
+            </Tooltip>
           </Popover>
         </div>
       </div>
