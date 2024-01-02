@@ -17,7 +17,7 @@ const ItemToBuy = ()=>{
   ]
     return (
         <Card className="min-w-full bg-white flex gap-x-4">
-              <div className="w-2/4 h-56 flex flex-col gap-y-4">
+              <div className="w-2/4 h-fit flex flex-col gap-y-4">
                 <CardTitle>List of items to buy</CardTitle>
                 <div className="flex gap-8 items-center mb-4">
                   <div className="flex flex-col">
@@ -41,11 +41,11 @@ const ItemToBuy = ()=>{
                   </Tooltip>
                 </div>
                 <div className="flex flex-wrap gap-4 w-full justify-between">
-                  {
-                    Items.map((item, index)=>{
-                      return <ItemCheckBox key={index} props={item}/>
-                    })
-                  }
+                    {
+                      Items.map((item, index)=>{
+                        return <ItemCheckBox key={index} props={item}/>
+                      })
+                    }
                 </div>
               </div>
               <span className="bg-slate-300 h-auto w-0.5 rounded-full"></span>

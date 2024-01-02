@@ -11,7 +11,7 @@ import wallet from '../../assets/wallet.svg'
 
 const Balance =()=>{
     return (
-        <Card className="bg-white w-[28rem] flex-grow">
+        <Card className="bg-white w-[18rem] grow">
             <div className="flex justify-between ">
               <CardTitle>Balance statistics</CardTitle>
               <Popover

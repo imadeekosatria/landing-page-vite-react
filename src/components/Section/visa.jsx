@@ -5,7 +5,7 @@ import { PropTypes } from "prop-types"
 const Visa = ({prop})=>{
     const {name, validDate} = prop
     return (
-        <Card className="bg-indigo-500 w-[24rem] relative">
+        <Card className="bg-indigo-500 lg:w-[20rem] grow xl:w-96 max-w-sm relative">
             <div className="w-full h-full flex justify-center relative items-center">
               <img src={man} alt="man push dolar"></img>
             </div>
