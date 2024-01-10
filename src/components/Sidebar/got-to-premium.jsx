@@ -3,7 +3,7 @@ import Crown from "../../assets/crown.png"
 import { Tooltip } from "evergreen-ui"
 const GoToPremium = ()=>{
     return (
-        <Card className="border-2">
+        <Card className="border-2 dark:border-slate-700">
             <CardTitle>Go to premium</CardTitle>
             <div className="flex flex-col items-center gap-y-4">
                 <img src={Crown} alt="Crown" className="w-40"/>

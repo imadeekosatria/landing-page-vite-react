@@ -2,7 +2,7 @@ import {Card, CardTitle} from '../ui/card'
 import StackChart from '../ui/stack-chart'
 const Expense = ()=>{
     return (
-        <Card className="border-2 rounded-2xl">
+        <Card className="border-2 dark:border-slate-700">
             <CardTitle className="text-sm">Expense and income</CardTitle>
             <div className='flex'>
                 <div className='flex flex-col'>
@@ -12,7 +12,7 @@ const Expense = ()=>{
                 </div>
                 <div className="inline-flex items-center justify-center w-full relative">
                     <hr className="w-12 h-px my-8 bg-gray-200 border-0  rotate-90"/>
-                    <span className="absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2  ">vs</span>
+                    <span className="absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white dark:bg-slate-800  dark:text-white left-1/2  ">vs</span>
                 </div>
                 <div className='flex flex-col text-right'>
                     <span className='text-sm'>Income</span>

@@ -15,10 +15,10 @@ const Transaction = ()=>{
         {avatar: avatar5, name: 'Helena Park', date: '02 July, 2023', value: '-$1,200' }
     ]
     return (
-        <Card className="bg-white w-2/5 grow flex flex-col gap-4 h-72">
+        <Card className="bg-white dark:bg-slate-800 dark:text-white w-2/5 grow flex flex-col gap-4 h-72">
             <div className="flex justify-between">
                 <CardTitle>Last Transaction</CardTitle>
-                <div className="flex gap-4 text-slate-700">
+                <div className="flex gap-4 text-slate-700 dark:text-slate-300">
                     <span className="underline cursor-pointer">Newest</span>
                     <span className="cursor-pointer">Oldest</span>
                 </div>

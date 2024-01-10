@@ -5,6 +5,7 @@ import Transaction from "./Section/transaction"
 import Analytic from "./Section/analytic"
 import Search from "./Section/search"
 import { PropTypes } from "prop-types"
+import ThemeSwitcher from "./Section/theme-switch"
 
 
 
@@ -14,11 +15,14 @@ const Section = ({prop}) => {
     <>
       <main className="col-span-8 2xl:col-span-14 w-full p-4 min-h-screen overflow-y-auto overscroll-y-auto">
         <header className="flex justify-between mb-4 items-center">
-          <div>
+          <div className="dark:text-white">
             <h1 className="text-3xl font-semibold">Hello, {name}</h1>
             <span>View and control your finances here!</span>
           </div>
-          <Search/>
+          <div className="flex gap-x-2">
+            <ThemeSwitcher/>
+            <Search/>
+          </div>
         </header>
         <div className="flex flex-wrap gap-4 justify-between">
           <Balance/>

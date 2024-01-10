@@ -14,7 +14,7 @@ const Spending = ()=>{
         {image: Tikect, name: 'Tickets', dateTime: 'May 10, 2023 at 12.00 pm'}
     ]
     return (
-        <Card className="border-2">
+        <Card className="border-2 dark:border-slate-700">
             <div className="flex justify-between items-center">
                 <CardTitle>Last spending</CardTitle>
                 <CardOption/>

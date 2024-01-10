@@ -11,9 +11,9 @@ import wallet from '../../assets/wallet.svg'
 
 const Balance =()=>{
     return (
-        <Card className="bg-white w-[18rem] grow">
+        <Card className="bg-white dark:bg-slate-800 w-[18rem] grow">
             <div className="flex justify-between ">
-              <CardTitle>Balance statistics</CardTitle>
+              <CardTitle className="dark:text-white">Balance statistics</CardTitle>
               <Popover
                 position={Position.BOTTOM_LEFT}
                 content={
@@ -59,7 +59,7 @@ const Balance =()=>{
                 </Tooltip>
               </Popover>
             </div>
-            <div className="grid grid-cols-3 gap-x-1">
+            <div className="grid grid-cols-3 gap-x-1 dark:text-white">
               <div className="flex flex-col w-full gap-y-1">
                 <span className="font-semibold text-4xl">$564</span>
                 <div className="flex gap-x-2 items-center">

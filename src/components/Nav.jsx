@@ -10,8 +10,8 @@ const Nav = () => {
   const tooltipPosition = Position.RIGHT;
   return (
     <>
-      <nav className="col-start-1 min-h-screen w-24 bg-white text-center py-4 relative">
-        <div className="fixed left-5">
+      <nav className="col-start-1 min-h-screen w-24 bg-white dark:bg-slate-800 text-center py-4 relative">
+        <div className="fixed left-5 h-full flex flex-col 2xl:justify-around">
           <div className=" flex flex-col justify-between h-28">
             <Logo props={{ text: "S.", tooltip: tooltipPosition }} />
             <ChatLink prop={{ tooltip: tooltipPosition }} />

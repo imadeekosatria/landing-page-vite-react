@@ -16,8 +16,8 @@ const ItemToBuy = ()=>{
     {text: 'Iphone 14 pro max', check: true}
   ]
     return (
-        <Card className="min-w-full bg-white flex gap-x-4">
-              <div className="w-2/4 h-fit flex flex-col gap-y-4">
+        <Card className="min-w-full bg-white dark:bg-slate-800 flex gap-x-4">
+              <div className="w-2/4 h-fit flex flex-col gap-y-4 dark:text-white">
                 <CardTitle>List of items to buy</CardTitle>
                 <div className="flex gap-8 items-center mb-4">
                   <div className="flex flex-col">
@@ -50,7 +50,7 @@ const ItemToBuy = ()=>{
               </div>
               <span className="bg-slate-300 h-auto w-0.5 rounded-full"></span>
               <div className="w-2/4 flex flex-col gap-4">
-                <CardTitle>Esther Howard</CardTitle>
+                <CardTitle className="dark:text-white">Esther Howard</CardTitle>
                 <SectionChat/>
               </div>
           </Card>

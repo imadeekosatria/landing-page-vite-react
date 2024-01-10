@@ -8,6 +8,7 @@ import { faFaceSmile } from "@fortawesome/free-regular-svg-icons"
 import { faPaperclip } from "@fortawesome/free-solid-svg-icons"
 
 
+
 const ChatLink = ({prop}) => {
   const {tooltip} = prop
   return (
@@ -52,7 +53,7 @@ const ChatFrom = ({props})=>{
     return (
         <div className="w-full text-left flex gap-2">
             <img src={avatarFrom} alt="avatar from"  className='w-10 h-auto'/>
-            <span className="px-4 py-2 bg-slate-200 w-fit rounded-e-xl rounded-tl-xl">{text}</span>
+            <span className="px-4 py-2 bg-slate-200 dark:bg-slate-600 dark:text-white w-fit rounded-e-xl rounded-tl-xl">{text}</span>
         </div>
     )
 }
@@ -63,21 +64,30 @@ ChatFrom.propTypes ={
     text: PropTypes.string
 }
 
-const ChatInput = ()=>{
+const ChatInput = (props)=>{
+  const formHandler = (event)=>{
+    event.preventDefault()
+    props.onSubmit(event.target.msg.value)
+  }
   return (
-      <div className="bg-slate-200 rounded-xl">
-          <input type="text" placeholder="Type your message" className="w-full bg-inherit rounded-xl px-4 pt-4 focus:outline-none"/>
+    <form onSubmit={formHandler}>
+      <div className="bg-slate-200 dark:bg-slate-600 dark:text-white rounded-xl">
+          <input type="text" name="msg" placeholder="Type your message" className="w-full bg-inherit rounded-xl px-4 pt-4 focus:outline-none"aria-autocomplete="false"/>
           <div className="flex justify-between p-4 items-center">
               <div className="flex gap-4">
                   <FontAwesomeIcon icon={faFaceSmile} className="cursor-pointer hover:animate-bounce"/>
                   <FontAwesomeIcon icon={faPaperclip} className="cursor-pointer hover:animate-bounce"/>
               </div>
-              <Tooltip content="Send message">
-                <button type="submit" className="bg-indigo-500 px-4 py-2 text-slate-50 rounded-lg">Send now</button>
-              </Tooltip>
+              <button type="submit" className="bg-indigo-500 px-4 py-2 text-slate-50 rounded-lg">Send now</button>
           </div>
       </div>
+    </form>
   )
+}
+
+ChatInput.propTypes ={
+  onSubmit: PropTypes.func,
+  chat: PropTypes.object
 }
 
 export {ChatLink, ChatSender, ChatFrom, ChatInput}

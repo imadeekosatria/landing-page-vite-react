@@ -20,7 +20,7 @@ const Search = ()=>{
             </Overlay>
             <FontAwesomeIcon
                 icon={faMagnifyingGlass}
-                className="bg-white p-4 rounded-full hover:bg-slate-100 cursor-pointer"
+                className="bg-white dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700 p-4 rounded-full hover:bg-slate-100 cursor-pointer"
                 onClick={()=>setIsshown(true)}
             />
         </>

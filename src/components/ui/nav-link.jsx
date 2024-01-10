@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
 const Link = ({ prop }) => {
   const { tooltip } = prop;
   return (
-    <ol className="rounded-full bg-slate-200 w-fit p-1 flex flex-col gap-2.5">
+    <ol className="rounded-full bg-slate-200 dark:bg-slate-300 w-fit p-1 flex flex-col gap-2.5">
       <li>
         <Tooltip content="Home page" position={tooltip}>
           <a href="#">
