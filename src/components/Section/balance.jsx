@@ -11,9 +11,9 @@ import wallet from '../../assets/wallet.svg'
 
 const Balance =()=>{
     return (
-        <Card className="bg-white dark:bg-slate-800 w-[18rem] grow">
-            <div className="flex justify-between ">
-              <CardTitle className="dark:text-white">Balance statistics</CardTitle>
+        <Card className="balance">
+            <div className="top">
+              <CardTitle>Balance statistics</CardTitle>
               <Popover
                 position={Position.BOTTOM_LEFT}
                 content={
@@ -49,11 +49,11 @@ const Balance =()=>{
                 }
               >
                 <Tooltip content="Filter">
-                  <button className="bg-gray-100 p-2 rounded-lg hover:bg-gray-300 flex justify-between gap-x-2 items-center">
+                  <button>
                     Filter
                     <FontAwesomeIcon
                       icon={faChevronDown}
-                      style={{ color: "bg-slate-950" }}
+                      style={{ color: "#020617" }}
                     />
                   </button>
                 </Tooltip>

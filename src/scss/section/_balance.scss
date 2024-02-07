@@ -1,0 +1,25 @@
+@mixin balance-css {
+  .balance {
+    background-color: white;
+    width: 18rem;
+    flex-grow: 1;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        background-color: #f9fafb;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        column-gap: 0.5rem;
+        align-items: center;
+      }
+      button:hover {
+        background-color: #e5e7eb;
+      }
+    }
+  }
+}

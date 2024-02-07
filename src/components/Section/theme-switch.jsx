@@ -75,10 +75,10 @@ const ThemeSwitcher = () => {
 
   return (
     <>
-      <div className="relative shadow-2xl">
+      <div className="theme-switch">
         <FontAwesomeIcon
           icon={getIcon()}
-          className="dark:text-white cursor-pointer bg-white dark:bg-slate-800 p-4 object-fill block rounded-full"
+          
           onClick={()=>{setIsClicked(!isClicked)}}
         />
         <div
