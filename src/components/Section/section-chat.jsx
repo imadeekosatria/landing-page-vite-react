@@ -19,8 +19,8 @@ const SectionChat=()=>{
         ref.current.scrollIntoView({behavior: 'smooth'})
     },[message])
     return (
-        <div className="w-full flex justify-between h-full flex-col gap-4">
-            <div className="mb-4 flex flex-col gap-6 overflow-y-auto h-[8rem] 2xl:h-60 px-4" >
+        <div className="container">
+            <div className="chat" >
                 {
                     message.map((msg, index)=>{
                         if(msg.sender){

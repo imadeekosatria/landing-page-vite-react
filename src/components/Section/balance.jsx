@@ -59,26 +59,26 @@ const Balance =()=>{
                 </Tooltip>
               </Popover>
             </div>
-            <div className="grid grid-cols-3 gap-x-1 dark:text-white">
-              <div className="flex flex-col w-full gap-y-1">
-                <span className="font-semibold text-4xl">$564</span>
-                <div className="flex gap-x-2 items-center">
-                  <img src={wallet} alt="wallet image" className="w-16 xl:w-5/12"/>
-                  <span className="break-words tracking-wide 2xl:text-3xl">Your total balance</span>
+            <div className="bottom">
+              <div className="balance-item">
+                <span className="balance-now">$564</span>
+                <div className="balance-wallet">
+                  <img src={wallet} alt="wallet image"/>
+                  <span>Your total balance</span>
                 </div>
                 <hr />
-                <div className="flex items-center gap-x-2">
+                <div className="tinychart">
                   <TinyChart />
-                  <span className="flex gap-x-1 items-center">
+                  <span>
                     <FontAwesomeIcon icon={faCircleArrowUp} size="lg" />
                     6%
                   </span>
                 </div>
-                <span className="text-slate-400">
+                <span className="earnings-remind">
                   Always see your earnings updates
                 </span>
               </div>
-              <div className="col-span-2">
+              <div className="balance-chart">
                 <BarChartSection />
               </div>
             </div>

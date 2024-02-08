@@ -14,8 +14,8 @@ Card.propTypes={
     className: PropTypes.string
 }
 
-const CardTitle = ({children, className})=>(
-    <span className={`card-title ${className}`}>{children}</span>
+const CardTitle = ({children})=>(
+    <span className="card-title">{children}</span>
 )
 
 CardTitle.propTypes={

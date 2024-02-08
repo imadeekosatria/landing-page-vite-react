@@ -18,7 +18,7 @@ const ChatLink = ({prop}) => {
           icon={faComments}
           fixedWidth
           size="lg"
-          className="bg-orange-200 hover:bg-orange-300 rounded-full px-2.5 py-3"
+          className="message"
         />
       </a>
     </Tooltip>
@@ -35,9 +35,9 @@ ChatLink.propTypes={
 const ChatSender = ({props})=>{
     const {text} = props
     return (
-        <div className="w-full flex gap-2 justify-end">
-            <span className="px-4 py-2 bg-indigo-500 w-fit rounded-s-xl rounded-tr-xl text-slate-50">{text}</span>        
-            <img src={avatarSender} alt="avatar sender"  className='w-10 h-auto'/>
+        <div className="sender">
+            <span>{text}</span>        
+            <img src={avatarSender} alt="avatar sender"/>
         </div>
     )
 }
@@ -51,9 +51,9 @@ ChatSender.propTypes={
 const ChatFrom = ({props})=>{
     const {text} = props
     return (
-        <div className="w-full text-left flex gap-2">
-            <img src={avatarFrom} alt="avatar from"  className='w-10 h-auto'/>
-            <span className="px-4 py-2 bg-slate-200 dark:bg-slate-600 dark:text-white w-fit rounded-e-xl rounded-tl-xl">{text}</span>
+        <div className="from">
+            <img src={avatarFrom} alt="avatar from"/>
+            <span>{text}</span>
         </div>
     )
 }
@@ -71,14 +71,14 @@ const ChatInput = (props)=>{
   }
   return (
     <form onSubmit={formHandler}>
-      <div className="bg-slate-200 dark:bg-slate-600 dark:text-white rounded-xl">
-          <input type="text" name="msg" placeholder="Type your message" className="w-full bg-inherit rounded-xl px-4 pt-4 focus:outline-none"aria-autocomplete="false"/>
-          <div className="flex justify-between p-4 items-center">
-              <div className="flex gap-4">
-                  <FontAwesomeIcon icon={faFaceSmile} className="cursor-pointer hover:animate-bounce"/>
-                  <FontAwesomeIcon icon={faPaperclip} className="cursor-pointer hover:animate-bounce"/>
+      <div>
+          <input type="text" name="msg" placeholder="Type your message" aria-autocomplete="false"/>
+          <div className="chat-bottom">
+              <div>
+                  <FontAwesomeIcon icon={faFaceSmile}/>
+                  <FontAwesomeIcon icon={faPaperclip}/>
               </div>
-              <button type="submit" className="bg-indigo-500 px-4 py-2 text-slate-50 rounded-lg">Send now</button>
+              <button type="submit">Send now</button>
           </div>
       </div>
     </form>

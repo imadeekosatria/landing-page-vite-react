@@ -25,7 +25,7 @@ const Nav = () => {
             </Tooltip>
             <Tooltip content="Logout" position={tooltipPosition}>
               <a href="logout">
-                <FontAwesomeIcon icon={faArrowRightFromBracket} size="lg" className="bg-slate-200 p-2.5 rounded-full"/>
+                <FontAwesomeIcon icon={faArrowRightFromBracket} size="lg"/>
               </a>
             </Tooltip>
           </div>

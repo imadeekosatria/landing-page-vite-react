@@ -1,6 +1,6 @@
 @use './nav';
 @use './section';
-
+@use './sidebar/' as sidebar;
 $bg-slate: #e2e8f0;
 
 *,

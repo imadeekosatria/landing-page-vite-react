@@ -1,0 +1,45 @@
+$bg-white: white;
+$text-sm: 0.875rem;
+$text-sm-line-height: 1.25rem;
+$text-base: 1rem;
+$text-base-line-height: 1.5rem;
+
+.sidebar-container{
+    grid-column: span 3 / span 3;
+    padding: 2rem 1rem;
+    background-color: $bg-white;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .expense-container{
+        border-width: 2px;
+        span:first-child{
+            font-size: $text-sm;
+            line-height: $text-sm-line-height;
+        }
+        div:first-child{
+            display: flex;
+            div:first-child{
+                display: flex;
+                flex-direction: column;
+                span:first-child{
+                    font-size: $text-sm;
+                    line-height: $text-sm-line-height;
+                }
+                span:nth-child(2){
+                    font-size: $text-sm;
+                    line-height: $text-sm-line-height;
+                    font-weight: 600;
+                }
+                span:last-child{
+                    font-size: sm;
+                }
+            }
+        }
+
+
+    }
+}

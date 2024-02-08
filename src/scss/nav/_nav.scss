@@ -1,0 +1,93 @@
+.nav-container{
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 6rem;
+    min-height: 100vh;
+    grid-column-start: 1;
+    position: relative;
+    background-color: white;
+    
+    .nav{
+        flex-direction: column;
+        display: flex;
+        height: 100%;
+        left: 1.25rem;
+        position: fixed;
+
+        .logo-container{
+            justify-content: space-between;
+            height: 7rem;
+            display: flex;
+            flex-direction: column;
+            .logo{
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+                font-weight: 500;
+            }
+            .message{
+                background-color: #fed7aa;
+                border-radius: 9999px;
+                padding: 0.75rem 0.625rem;
+            }
+
+            .message:hover{
+                background-color: #fdba74;
+            }
+        }
+
+        .nav-link{
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            
+            ol{
+                border-radius: 9999px;
+                background-color: #e2e8f0;
+                width: fit-content;
+                padding: .25rem;
+                display: flex;
+                flex-direction: column;
+                gap: .625rem;
+
+                li:first-child>a>svg{
+                    background-color: #6366f1;
+                }
+
+                li:first-child>a>svg:hover{
+                    background-color: #6366f1;
+                }
+
+                li>a>svg{
+                    border-radius: 9999px;
+                    padding: .75rem .625rem;
+                }
+                li>a>svg:hover{
+                    background-color: #f1f5f9;
+                }
+            }
+        }
+
+        .bottom-nav-container{
+            align-items: center;
+            gap: 1rem;
+            display: flex;
+            flex-direction: column;
+
+            a>svg{
+                background-color: #e2e8f0;
+                padding: .625rem;
+                border-radius: 9999px;
+            }
+        }
+    }
+
+
+    @media (min-width: 1536px) {
+        .nav{
+            justify-content: space-around;
+        }
+    }
+}

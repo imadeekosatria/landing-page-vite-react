@@ -9,7 +9,7 @@
       justify-content: space-between;
 
       button {
-        background-color: #f9fafb;
+        background-color: #e2e8f0;
         padding: 0.5rem;
         border-radius: 0.5rem;
         display: flex;
@@ -18,7 +18,77 @@
         align-items: center;
       }
       button:hover {
-        background-color: #e5e7eb;
+        background-color: #cbd5e1;
+      }
+    }
+
+    .bottom{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: .25rem;
+
+      .balance-item{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        row-gap: .25rem;
+
+        .balance-now{
+          font-weight: 600;
+          font-size: 2.25rem;
+          line-height: 2.5rem;
+        }
+        
+        .balance-wallet{
+          display: flex;
+          column-gap: .5rem;
+          align-items: center;
+          span{
+            overflow-wrap: break-word;
+            letter-spacing: .025em;
+
+          }
+          hr{
+            height: 0;
+            color: inherit;
+            border-top-width: 1px;
+          }
+          @media (min-width: 1536px){
+            span{
+              font-size: 1.875rem;
+              line-height: 2.25rem;
+            }
+          }
+          img{
+            width: 4rem;
+
+          }
+          @media (min-width: 1280px){
+            img{
+              width: 41.6667%;
+            }
+          }
+        }
+
+        .tinychart{
+          display: flex;
+          align-items: center;
+          column-gap: .5rem;
+
+          span{
+            display: flex;
+            column-gap: .25rem;
+            align-items: center;
+          }
+        }
+
+        .earnings-remind{
+          color: #94a3b8;
+        }
+      }
+
+      .balance-chart{
+        grid-column: span 2 / span 2;
       }
     }
   }

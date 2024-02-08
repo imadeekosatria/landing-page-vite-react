@@ -1,0 +1,9 @@
+$bg-white: white;
+.analytics-container{
+    background-color: $bg-white;
+    width: 20rem;
+    div:first-child{
+        display: flex;
+        justify-content: space-between;
+    }
+}

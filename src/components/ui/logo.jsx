@@ -5,7 +5,7 @@ const Logo =({props})=>{
     return (
         <>
             <Tooltip content='S.' position={tooltip}>
-                <a href="/" className="text-3xl font-medium dark:text-white">{text}</a>
+                <a href="/" className="logo">{text}</a>
             </Tooltip>
         </>
     )
