@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
 const Link = ({ prop }) => {
   const { tooltip } = prop;
   return (
-    <ol className="rounded-full bg-slate-200 dark:bg-slate-300 w-fit p-1 flex flex-col gap-2.5">
+    <ol>
       <li>
         <Tooltip content="Home page" position={tooltip}>
           <a href="#">
@@ -20,7 +20,6 @@ const Link = ({ prop }) => {
               icon={faHouse}
               size="lg"
               style={{ color: "#f8fafc" }}
-              className="bg-indigo-500 active:bg-indigo-500 rounded-full px-2.5 py-3"
               fixedWidth
             />
           </a>
@@ -33,7 +32,6 @@ const Link = ({ prop }) => {
               icon={faBell}
               fixedWidth
               size="lg"
-              className="hover:bg-slate-100 rounded-full px-2.5 py-3"
             />
           </a>
         </Tooltip>
@@ -45,7 +43,6 @@ const Link = ({ prop }) => {
               fixedWidth
               icon={faClock}
               size="lg"
-              className="hover:bg-slate-100 rounded-full px-2.5 py-3"
             />
           </a>
         </Tooltip>
@@ -57,7 +54,6 @@ const Link = ({ prop }) => {
             fixedWidth
               icon={faUserGroup}
               size="lg"
-              className="hover:bg-slate-100 rounded-full px-2.5 py-3"
             />
           </a>
         </Tooltip>
@@ -69,7 +65,6 @@ const Link = ({ prop }) => {
               icon={faWallet}
               fixedWidth
               size="lg"
-              className="hover:bg-slate-100 rounded-full px-2.5 py-3"
             />
           </a>
         </Tooltip>
@@ -81,7 +76,6 @@ const Link = ({ prop }) => {
               icon={faGear}
               fixedWidth
               size="lg"
-              className="hover:bg-slate-100 rounded-full px-2.5 py-3"
             />
           </a>
         </Tooltip>

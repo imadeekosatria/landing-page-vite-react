@@ -1,0 +1,21 @@
+@use '../components/variables' as var;
+.analytics-container{
+    background-color: var.$bg-white;
+    width: 20rem;
+    div:first-child{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@mixin analytics-dark{
+    .analytics-container{
+        background-color: var.$slate-800;
+
+        div{
+            svg{
+                color: var.$bg-white;
+            }
+        }
+    }
+}

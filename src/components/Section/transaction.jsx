@@ -15,15 +15,15 @@ const Transaction = ()=>{
         {avatar: avatar5, name: 'Helena Park', date: '02 July, 2023', value: '-$1,200' }
     ]
     return (
-        <Card className="bg-white dark:bg-slate-800 dark:text-white w-2/5 grow flex flex-col gap-4 h-72">
-            <div className="flex justify-between">
+        <Card className="transactions-container">
+            <div className="top">
                 <CardTitle>Last Transaction</CardTitle>
-                <div className="flex gap-4 text-slate-700 dark:text-slate-300">
-                    <span className="underline cursor-pointer">Newest</span>
-                    <span className="cursor-pointer">Oldest</span>
+                <div>
+                    <span>Newest</span>
+                    <span>Oldest</span>
                 </div>
             </div>
-            <div className="overflow-y-auto h-full pr-3 flex flex-col gap-2">
+            <div className="list-transactions">
                 {
                     transactionData.map((user, index)=>{
                         return <TransactionList key={index} props={user}/>

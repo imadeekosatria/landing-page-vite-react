@@ -5,14 +5,14 @@ import { PropTypes } from "prop-types"
 const Visa = ({prop})=>{
     const {name, validDate} = prop
     return (
-        <Card className="bg-indigo-500 lg:w-[20rem] grow xl:w-96 max-w-sm relative">
-            <div className="w-full h-full flex justify-center relative items-center">
+        <Card className="visa">
+            <div className="image-container">
               <img src={man} alt="man push dolar"></img>
             </div>
-            <div className="absolute top-0 left-0 flex flex-col h-full w-full py-4 justify-between">
-              <div className="flex justify-between w-full px-4 items-center">
-                <span className="text-white font-medium text-4xl">S.</span>
-                <div className="w-16 fill-white">
+            <div className="visa-content">
+              <div className="top">
+                <span>S.</span>
+                <div >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     enableBackground="new 0 0 24 24"
@@ -25,9 +25,9 @@ const Visa = ({prop})=>{
                   </svg>
                 </div>
               </div>
-              <div className="px-4 text-white">
-                <span className="font-medium">**** 9838</span>
-                <div className="flex justify-between">
+              <div className="bottom">
+                <span className="visa-number">**** 9838</span>
+                <div>
                   <span>{name}</span>
                   <span>{validDate}</span>
                 </div>

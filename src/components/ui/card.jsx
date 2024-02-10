@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons"
 
 const Card = ({children, className})=>(
-    <div className={`p-4 rounded-3xl ${className}`}>
+    <div className={`card-container ${className}`}>
         {children}
     </div>
 )
@@ -14,8 +14,8 @@ Card.propTypes={
     className: PropTypes.string
 }
 
-const CardTitle = ({children, className})=>(
-    <span className={`font-medium ${className}`}>{children}</span>
+const CardTitle = ({children})=>(
+    <span className="card-title">{children}</span>
 )
 
 CardTitle.propTypes={

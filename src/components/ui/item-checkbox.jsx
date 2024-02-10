@@ -15,9 +15,9 @@ const ItemCheckBox = ({ props }) => {
   const { text, check } = props
   const [isCheck, setIsCheck] = useState(check);
   return (
-    <Pane className="bg-slate-200 dark:bg-slate-700 rounded-xl px-4 w-[10rem] flex-grow 2xl:w-[21rem] flex justify-between items-center">
+    <Pane className="pane">
       <Checkbox
-        label={<span className="font-semibold dark:text-white text-sm">{text}</span>}
+        label={<span className="item-label">{text}</span>}
         checked={isCheck}
         value={text}
         onChange={() => setIsCheck(!isCheck)} 

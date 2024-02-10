@@ -1,0 +1,13 @@
+@use './variables';
+.card-container{
+    padding: 1rem;
+    border-radius: variables.$rounded-3xl;
+}
+
+.card-title{
+    font-weight: 500;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}

@@ -1,0 +1,117 @@
+@use '../components/variables' as var;
+
+.balance {
+  background-color: var.$bg-white;
+  width: 18rem;
+  flex-grow: 1;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      background-color: var.$slate-200;
+      padding: 0.75rem 0.5rem;
+      border-radius: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      column-gap: 0.5rem;
+      align-items: center;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: var.$slate-300;
+    }
+  }
+
+  .bottom{
+    display: grid;
+    grid-template-columns: var.$grid-cols-3;
+    column-gap: .25rem;
+
+    .balance-item{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      row-gap: .25rem;
+      
+      hr{
+        height: 1px;
+        color: inherit;
+        border-top-width: 1px;
+        width: 100%;
+      }
+      .balance-now{
+        font-weight: 600;
+        font-size: var.$text-4xl;
+        line-height: var.$text-4xl-line-height;
+      }
+      
+      .balance-wallet{
+        display: flex;
+        column-gap: .5rem;
+        align-items: center;
+        span{
+          overflow-wrap: break-word;
+          letter-spacing: 0.025em;
+        }
+        
+        img{
+          width: 4rem;
+
+        }
+      }
+
+      .tinychart{
+        display: flex;
+        align-items: center;
+        column-gap: .5rem;
+
+        span{
+          display: flex;
+          column-gap: .25rem;
+          align-items: center;
+        }
+      }
+
+      .earnings-remind{
+        color: var.$slate-400;
+      }
+    }
+
+    .balance-chart{
+      grid-column: var.$col-span-2;
+    }
+  }
+}
+
+@mixin balance-xl{
+  .balance-wallet{
+    img{
+      width: 41.6667%;
+    }
+  }
+
+}
+
+@mixin balance-2xl{
+  .balance-wallet{
+    span{
+      font-size: var.$text-3xl;
+      line-height: var.$text-3xl-line-height;
+    }
+  }
+}
+
+@mixin balance-dark{
+  .balance{
+    background-color: var.$slate-800;
+
+    .top{
+      button{
+        color: var.$slate-900;
+      }
+    }
+  }
+}

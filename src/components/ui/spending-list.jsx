@@ -4,11 +4,11 @@ const SpendingList = ({props, collectIndex})=>{
     const {length, current} = collectIndex
     return (
         <>
-            <div className="flex items-center gap-x-2">
-                <img src={image} alt="Store logo"  className="w-16 rounded-full bg-slate-300"/>
-                <div className="flex flex-col ">
-                    <span className="font-medium">{name}</span>
-                    <span className="text-slate-400 text-sm">{dateTime}</span>
+            <div>
+                <img src={image} alt="Store logo"/>
+                <div>
+                    <span>{name}</span>
+                    <span>{dateTime}</span>
                 </div>
             </div>
             {

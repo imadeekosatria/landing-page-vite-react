@@ -1,0 +1,109 @@
+@use '../components/variables' as var;
+
+.nav-container{
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 6rem;
+    min-height: 100vh;
+    grid-column-start: 1;
+    position: relative;
+    background-color: var.$bg-white;
+    
+    .nav{
+        flex-direction: column;
+        display: flex;
+        height: 100%;
+        left: 1.25rem;
+        position: fixed;
+
+        .logo-container{
+            justify-content: space-between;
+            height: 7rem;
+            display: flex;
+            flex-direction: column;
+            .logo{
+                font-size: var.$text-3xl;
+                line-height: var.$text-3xl-line-height;
+                font-weight: 500;
+            }
+            .message{
+                background-color: var.$orange-200;
+                border-radius: var.$rounded-full;
+                padding: 0.75rem 0.625rem;
+            }
+
+            .message:hover{
+                background-color: var.$orange-300;
+            }
+        }
+
+        .nav-link{
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            
+            ol{
+                border-radius: var.$rounded-full;
+                background-color: var.$slate-200;
+                width: fit-content;
+                padding: .25rem;
+                display: flex;
+                flex-direction: column;
+                gap: .625rem;
+
+                li:first-child>a>svg{
+                    background-color: var.$indigo-500;
+                }
+
+                li:first-child>a>svg:hover{
+                    background-color: var.$indigo-500;
+                }
+
+                li>a>svg{
+                    border-radius: var.$rounded-full;
+                    padding: .75rem .625rem;
+                }
+                li>a>svg:hover{
+                    background-color: var.$slate-100;
+                }
+            }
+        }
+
+        .bottom-nav-container{
+            align-items: center;
+            gap: 1rem;
+            display: flex;
+            flex-direction: column;
+
+            a>svg{
+                background-color: var.$slate-200;
+                padding: .625rem;
+                border-radius: var.$rounded-full;
+            }
+        }
+    }
+
+
+}
+
+@mixin nav-2xl{
+    .nav{
+        justify-content: space-around;
+    }
+}
+
+@mixin nav-dark{
+    .nav-container{
+        background-color: var.$slate-800;
+        .nav{
+            .logo-container{
+                a:first-child{
+                    color: var.$bg-white;
+                }
+            }
+        }
+    }
+}
