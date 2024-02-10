@@ -12,7 +12,7 @@ const GoToPremium = ()=>{
                     <span>Update your account to premium to get more features.</span>
                 </div>
                 <Tooltip content="Get premium">
-                    <a href="#" target="_blank" rel="noopener noreferrer">Get now</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Get it now</a>
                 </Tooltip>
             </div>
         </Card>

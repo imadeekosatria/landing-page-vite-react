@@ -1,4 +1,5 @@
 @use '../components/card';
+@use '../components/variables' as var;
 @use './balance';
 @use './visa';
 @use './item-to-buy';
@@ -6,7 +7,7 @@
 @use './analytics';
 
 main{
-    grid-column: span 8 / span 8;
+    grid-column: var.$col-span-8;
     width: 100%;
     padding: 1rem;
     min-height: 100vh;
@@ -21,8 +22,8 @@ main{
 
         .user{
             h1{
-                font-size: 1.875rem;
-                line-height: 2.25rem;
+                font-size: var.$text-3xl;
+                line-height: var.$text-3xl-line-height;
                 font-weight: 600;
             }
         }
@@ -37,22 +38,44 @@ main{
 
                 svg{
                     cursor: pointer;
-                    background-color: white;
+                    background-color: var.$bg-white;
                     padding: 1rem;
+                    width: 1rem;
                     object-fit: fill;
                     display: block;
-                    border-radius: 9999px;
+                    border-radius: var.$rounded-full;
+                }
+
+                div{
+                    position: absolute;
+                    top: 4rem;
+                    left: -7rem;
+                    background-color: var.$bg-white;
+                    border-radius: var.$rounded;
+                    column-gap: .5rem;
+                    display: flex;
+                    z-index: 20;
+
+                    svg{
+                        cursor: pointer;
+                        padding: 1rem;
+                        border-radius: var.$rounded;
+                        width: fit-content;
+                    }
+                    svg:hover{
+                        background-color: var.$slate-200;
+                    }
                 }
             }
 
             svg{
-                background-color: white;
+                background-color: var.$bg-white;
                 padding: 1rem;
-                border-radius: 9999px;
+                border-radius: var.$rounded-full;
                 cursor: pointer;
             }
             svg:hover{
-                background-color: #f1f5f9;
+                background-color: var.$slate-100;
             }
         }
 
@@ -64,7 +87,6 @@ main{
         gap: 1rem;
         justify-content: space-between;
 
-        @include balance.balance-css;
     }
 
 }
@@ -72,13 +94,63 @@ main{
 .search{
     width: 100vw;
     height: 100vh;
-    display: flex-start;
+    display: flex;
     margin-top: 2rem;
     justify-content: center;
 }
 
-@media (min-width: 1536px) {
+.hidden{
+    display: none !important;
+}
+
+@mixin section-lg{
+    @include visa.visa-lg;
+}
+
+@mixin section-xl{
+    @include balance.balance-xl;
+    @include visa.visa-xl;
+}
+
+@mixin section-2xl{
     main{
-        grid-column: span 14 / span 14;
+        grid-column: var.$col-span-14;
     }
+
+    @include balance.balance-2xl;
+    @include item-to-buy.items-2xl;
+}
+
+@mixin section-dark{
+    h1,span, hr{
+        color: var.$bg-white;
+    }
+
+    main{
+        header{
+            .theme-search{
+                .theme-switch{
+                    svg{
+                        background-color: var.$slate-800;
+                        color: var.$bg-white;
+                    }
+                    div{
+                        background-color: var.$slate-800;
+                        svg:hover{
+                            background-color: var.$slate-700;
+                        }
+                    }
+                }
+                svg{
+                    background-color: var.$slate-800;
+                    color: var.$bg-white;
+                }
+            }
+        }
+    }
+
+    @include balance.balance-dark;
+    @include item-to-buy.items-to-buy-dark;
+    @include transaction.transaction-dark;
+    @include analytics.analytics-dark;
 }

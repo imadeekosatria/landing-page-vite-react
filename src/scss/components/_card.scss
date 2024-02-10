@@ -1,6 +1,7 @@
+@use './variables';
 .card-container{
     padding: 1rem;
-    border-radius: 1.5rem;
+    border-radius: variables.$rounded-3xl;
 }
 
 .card-title{

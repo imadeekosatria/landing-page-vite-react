@@ -1,3 +1,9 @@
+/*==== Colors ====*/
+/*==== Colors for Dark ====*/
+/*==== Border Radius ====*/
+/*==== Typography ====*/
+/*==== Grids ====*/
+/*==== Grid Template Columns =====*/
 .nav-container {
   text-align: center;
   padding-top: 1rem;
@@ -75,11 +81,6 @@
   padding: 0.625rem;
   border-radius: 9999px;
 }
-@media (min-width: 1536px) {
-  .nav-container .nav {
-    justify-content: space-around;
-  }
-}
 
 .card-container {
   padding: 1rem;
@@ -92,6 +93,85 @@
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.balance {
+  background-color: white;
+  width: 18rem;
+  flex-grow: 1;
+}
+.balance .top {
+  display: flex;
+  justify-content: space-between;
+}
+.balance .top button {
+  background-color: #e2e8f0;
+  padding: 0.75rem 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.balance .top button:hover {
+  background-color: #cbd5e1;
+}
+.balance .bottom {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
+}
+.balance .bottom .balance-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 0.25rem;
+}
+.balance .bottom .balance-item hr {
+  height: 1px;
+  color: inherit;
+  border-top-width: 1px;
+  width: 100%;
+}
+.balance .bottom .balance-item .balance-now {
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.balance .bottom .balance-item .balance-wallet {
+  display: flex;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  align-items: center;
+}
+.balance .bottom .balance-item .balance-wallet span {
+  overflow-wrap: break-word;
+  letter-spacing: 0.025em;
+}
+.balance .bottom .balance-item .balance-wallet img {
+  width: 4rem;
+}
+.balance .bottom .balance-item .tinychart {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.balance .bottom .balance-item .tinychart span {
+  display: flex;
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
+  align-items: center;
+}
+.balance .bottom .balance-item .earnings-remind {
+  color: #94a3b8;
+}
+.balance .bottom .balance-chart {
+  grid-column: span 2/span 2;
 }
 
 .visa {
@@ -150,16 +230,6 @@
   justify-content: space-between;
 }
 
-@media (min-width: 1024px) {
-  .visa {
-    width: 20rem;
-  }
-}
-@media (min-width: 1280px) {
-  .visa {
-    width: 24rem;
-  }
-}
 .items-to-buy-container {
   min-width: 100%;
   background-color: white;
@@ -212,6 +282,9 @@
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
   align-items: center;
+  background-color: transparent;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .items-to-buy-container .list-items-container .items {
   display: flex;
@@ -234,6 +307,9 @@
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  -webkit-user-select: none; /* Safari */ /* IE 10 and IE 11 */
+  -moz-user-select: none;
+       user-select: none; /* Standard syntax */
 }
 .items-to-buy-container .separator {
   background-color: #cbd5e1;
@@ -341,14 +417,6 @@
   border-radius: 0.5rem;
 }
 
-@media (min-width: 1536px) {
-  .pane {
-    width: 21rem;
-  }
-  .chat {
-    height: 15rem;
-  }
-}
 @keyframes bounce {
   0%, 100% {
     transform: translateY(-25%);
@@ -393,6 +461,8 @@
 }
 .transactions-container .list-transactions hr {
   width: 100%;
+  height: 0;
+  border-top-width: 1px;
 }
 .transactions-container .list-transactions .item-container {
   display: grid;
@@ -467,10 +537,32 @@ main header .theme-search .theme-switch svg {
   cursor: pointer;
   background-color: white;
   padding: 1rem;
+  width: 1rem;
   -o-object-fit: fill;
      object-fit: fill;
   display: block;
   border-radius: 9999px;
+}
+main header .theme-search .theme-switch div {
+  position: absolute;
+  top: 4rem;
+  left: -7rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  display: flex;
+  z-index: 20;
+}
+main header .theme-search .theme-switch div svg {
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main header .theme-search .theme-switch div svg:hover {
+  background-color: #e2e8f0;
 }
 main header .theme-search svg {
   background-color: white;
@@ -487,108 +579,19 @@ main .content {
   gap: 1rem;
   justify-content: space-between;
 }
-main .content .balance {
-  background-color: white;
-  width: 18rem;
-  flex-grow: 1;
-}
-main .content .balance .top {
-  display: flex;
-  justify-content: space-between;
-}
-main .content .balance .top button {
-  background-color: #e2e8f0;
-  padding: 0.75rem 0.5rem;
-  border-radius: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
-  align-items: center;
-  font-size: 1rem;
-  cursor: pointer;
-}
-main .content .balance .top button:hover {
-  background-color: #cbd5e1;
-}
-main .content .balance .bottom {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  -moz-column-gap: 0.25rem;
-       column-gap: 0.25rem;
-}
-main .content .balance .bottom .balance-item {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  row-gap: 0.25rem;
-}
-main .content .balance .bottom .balance-item .balance-now {
-  font-weight: 600;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-main .content .balance .bottom .balance-item .balance-wallet {
-  display: flex;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
-  align-items: center;
-}
-main .content .balance .bottom .balance-item .balance-wallet span {
-  overflow-wrap: break-word;
-  letter-spacing: 0.025em;
-}
-main .content .balance .bottom .balance-item .balance-wallet hr {
-  height: 0;
-  color: inherit;
-  border-top-width: 1px;
-}
-@media (min-width: 1536px) {
-  main .content .balance .bottom .balance-item .balance-wallet span {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-}
-main .content .balance .bottom .balance-item .balance-wallet img {
-  width: 4rem;
-}
-@media (min-width: 1280px) {
-  main .content .balance .bottom .balance-item .balance-wallet img {
-    width: 41.6667%;
-  }
-}
-main .content .balance .bottom .balance-item .tinychart {
-  display: flex;
-  align-items: center;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
-}
-main .content .balance .bottom .balance-item .tinychart span {
-  display: flex;
-  -moz-column-gap: 0.25rem;
-       column-gap: 0.25rem;
-  align-items: center;
-}
-main .content .balance .bottom .balance-item .earnings-remind {
-  color: #94a3b8;
-}
-main .content .balance .bottom .balance-chart {
-  grid-column: span 2/span 2;
-}
 
 .search {
   width: 100vw;
   height: 100vh;
-  display: flex-start;
+  display: flex;
   margin-top: 2rem;
   justify-content: center;
 }
 
-@media (min-width: 1536px) {
-  main {
-    grid-column: span 14/span 14;
-  }
+.hidden {
+  display: none !important;
 }
+
 .sidebar-container {
   grid-column: span 3/span 3;
   padding: 2rem 1rem;
@@ -730,6 +733,7 @@ main .content .balance .bottom .balance-chart {
   color: white;
   padding: 1rem 0;
   border-radius: 1rem;
+  font-weight: 500;
 }
 
 *,
@@ -817,9 +821,36 @@ body {
   .main-container {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
+  .visa {
+    width: 20rem;
+  }
+}
+@media (min-width: 1280px) {
+  .balance-wallet img {
+    width: 41.6667%;
+  }
+  .visa {
+    width: 20rem;
+  }
 }
 @media (min-width: 1536px) {
   .main-container {
     grid-template-columns: repeat(18, minmax(0, 1fr));
+  }
+  .nav {
+    justify-content: space-around;
+  }
+  main {
+    grid-column: span 14/span 14;
+  }
+  .balance-wallet span {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  .pane {
+    width: 21rem;
+  }
+  .chat {
+    height: 15rem;
   }
 }/*# sourceMappingURL=Style.css.map */

@@ -1,19 +1,9 @@
-$bg-white: white;
-$bg-gray: #e5e7eb;
-$bg-slate-300: #cbd5e1;
-$bg-indigo-500: #6366f1;
-$text-sm: 0.875rem;
-$text-sm-line-height: 1.25rem;
-$text-base: 1rem;
-$text-base-line-height: 1.5rem;
-$text-slate-400: #94a3b8;
-$text-gray-900: #111827;
-$text-indigo-500: #6366f1;
+@use '../components/variables' as var;
 
 .sidebar-container{
-    grid-column: span 3 / span 3;
+    grid-column: var.$col-span-3;
     padding: 2rem 1rem;
-    background-color: $bg-white;
+    background-color: var.$bg-white;
     height: 100%;
     overflow-y: auto;
     display: flex;
@@ -23,8 +13,8 @@ $text-indigo-500: #6366f1;
     .sidebar-card{
         border-width: 2px;
         span:first-child{
-            font-size: $text-base;
-            line-height: $text-base-line-height;
+            font-size: var.$text-base;
+            line-height: var.$text-base-line-height;
         }
         
         .top-expense{
@@ -35,20 +25,20 @@ $text-indigo-500: #6366f1;
                 flex-direction: column;
                 
                 span:first-child{
-                    font-size: $text-sm;
-                    line-height: $text-sm-line-height;
+                    font-size: var.$text-sm;
+                    line-height: var.$text-sm-line-height;
                 }
     
                 span:nth-child(2){
-                    font-size: $text-base;
-                    line-height: $text-base-line-height;
+                    font-size: var.$text-base;
+                    line-height: var.$text-base-line-height;
                     font-weight: 600;
                 }
     
                 span:last-child {
-                    font-size: $text-sm;
-                    line-height: $text-sm-line-height;
-                    color: $text-slate-400;
+                    font-size: var.$text-sm;
+                    line-height: var.$text-sm-line-height;
+                    color: var.$slate-400;
                 }
     
             }   
@@ -68,7 +58,7 @@ $text-indigo-500: #6366f1;
                     width: 3rem;
                     height: 1px;
                     margin: 2rem 0;
-                    background-color: $bg-gray;
+                    background-color: var.$bg-gray;
                     border-width: 0;
                     transform: translate(0, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
                 }
@@ -77,7 +67,7 @@ $text-indigo-500: #6366f1;
                     position: absolute;
                     padding: 0 .75rem;
                     font-weight: 500;
-                    color: $text-gray-900;
+                    color: var.$gray-900;
                     transform: translate(-50%, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
                     left: 50%;
                 }
@@ -90,8 +80,8 @@ $text-indigo-500: #6366f1;
             align-items: center;
 
             span:first-child{
-                font-size: $text-base;
-                line-height: $text-base-line-height;
+                font-size: var.$text-base;
+                line-height: var.$text-base-line-height;
             }
         }
 
@@ -107,8 +97,8 @@ $text-indigo-500: #6366f1;
 
                 img{
                     width: 4rem;
-                    border-radius: 9999px;
-                    background-color: $bg-slate-300;
+                    border-radius: var.$rounded-full;
+                    background-color: var.$slate-300;
                 }
 
                 div{
@@ -118,19 +108,19 @@ $text-indigo-500: #6366f1;
 
                     span:first-child{
                         font-weight: 500;
-                        font-size: $text-base;
-                        line-height: $text-base-line-height;
+                        font-size: var.$text-base;
+                        line-height: var.$text-base-line-height;
                     }
                     span:last-child{
-                        color: $text-slate-400;
-                        font-size: $text-sm;
-                        line-height: $text-sm-line-height;
+                        color: var.$slate-400;
+                        font-size: var.$text-sm;
+                        line-height: var.$text-sm-line-height;
                     }
                 }
             }
 
             .show-all{
-                color: $text-indigo-500;
+                color: var.$indigo-500;
                 display: flex;
                 column-gap: .5rem;
                 align-items: center;
@@ -158,22 +148,48 @@ $text-indigo-500: #6366f1;
                 }
 
                 span:last-child{
-                    color: $text-slate-400;
+                    color: var.$slate-400;
                 }
             }
 
             a{
                 width: 100%;
-                background-color: $bg-indigo-500;
+                background-color: var.$indigo-500;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: $bg-white;
+                color: var.$bg-white;
                 padding: 1rem 0;
-                border-radius: 1rem;
+                border-radius: var.$rounded-2xl;
+                font-weight: 500;
             }
         }
     }
 
 
+}
+
+@mixin sidebar-dark{
+    .sidebar-container{
+        background-color: var.$slate-800;
+
+        .sidebar-card{
+            border-color: var.$slate-700;
+
+            .top-expense{
+                .vs{
+                    span{
+                        background-color: var.$slate-800;
+                        color: var.$bg-white;
+                    }
+                }
+            }
+
+            .top-spending{
+                svg{
+                    color: var.$bg-white;
+                }
+            }
+        }
+    }
 }

@@ -1,96 +1,116 @@
-@mixin balance-css {
-  .balance {
-    background-color: white;
-    width: 18rem;
-    flex-grow: 1;
+@use '../components/variables' as var;
 
-    .top {
+.balance {
+  background-color: var.$bg-white;
+  width: 18rem;
+  flex-grow: 1;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      background-color: var.$slate-200;
+      padding: 0.75rem 0.5rem;
+      border-radius: 0.5rem;
       display: flex;
       justify-content: space-between;
+      column-gap: 0.5rem;
+      align-items: center;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: var.$slate-300;
+    }
+  }
 
-      button {
-        background-color: #e2e8f0;
-        padding: 0.75rem 0.5rem;
-        border-radius: 0.5rem;
-        display: flex;
-        justify-content: space-between;
-        column-gap: 0.5rem;
-        align-items: center;
-        font-size: 1rem;
-        cursor: pointer;
+  .bottom{
+    display: grid;
+    grid-template-columns: var.$grid-cols-3;
+    column-gap: .25rem;
+
+    .balance-item{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      row-gap: .25rem;
+      
+      hr{
+        height: 1px;
+        color: inherit;
+        border-top-width: 1px;
+        width: 100%;
       }
-      button:hover {
-        background-color: #cbd5e1;
+      .balance-now{
+        font-weight: 600;
+        font-size: var.$text-4xl;
+        line-height: var.$text-4xl-line-height;
+      }
+      
+      .balance-wallet{
+        display: flex;
+        column-gap: .5rem;
+        align-items: center;
+        span{
+          overflow-wrap: break-word;
+          letter-spacing: 0.025em;
+        }
+        
+        img{
+          width: 4rem;
+
+        }
+      }
+
+      .tinychart{
+        display: flex;
+        align-items: center;
+        column-gap: .5rem;
+
+        span{
+          display: flex;
+          column-gap: .25rem;
+          align-items: center;
+        }
+      }
+
+      .earnings-remind{
+        color: var.$slate-400;
       }
     }
 
-    .bottom{
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      column-gap: .25rem;
+    .balance-chart{
+      grid-column: var.$col-span-2;
+    }
+  }
+}
 
-      .balance-item{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        row-gap: .25rem;
+@mixin balance-xl{
+  .balance-wallet{
+    img{
+      width: 41.6667%;
+    }
+  }
 
-        .balance-now{
-          font-weight: 600;
-          font-size: 2.25rem;
-          line-height: 2.5rem;
-        }
-        
-        .balance-wallet{
-          display: flex;
-          column-gap: .5rem;
-          align-items: center;
-          span{
-            overflow-wrap: break-word;
-            letter-spacing: .025em;
+}
 
-          }
-          hr{
-            height: 0;
-            color: inherit;
-            border-top-width: 1px;
-          }
-          @media (min-width: 1536px){
-            span{
-              font-size: 1.875rem;
-              line-height: 2.25rem;
-            }
-          }
-          img{
-            width: 4rem;
+@mixin balance-2xl{
+  .balance-wallet{
+    span{
+      font-size: var.$text-3xl;
+      line-height: var.$text-3xl-line-height;
+    }
+  }
+}
 
-          }
-          @media (min-width: 1280px){
-            img{
-              width: 41.6667%;
-            }
-          }
-        }
+@mixin balance-dark{
+  .balance{
+    background-color: var.$slate-800;
 
-        .tinychart{
-          display: flex;
-          align-items: center;
-          column-gap: .5rem;
-
-          span{
-            display: flex;
-            column-gap: .25rem;
-            align-items: center;
-          }
-        }
-
-        .earnings-remind{
-          color: #94a3b8;
-        }
-      }
-
-      .balance-chart{
-        grid-column: span 2 / span 2;
+    .top{
+      button{
+        color: var.$slate-900;
       }
     }
   }

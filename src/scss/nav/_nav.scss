@@ -1,3 +1,5 @@
+@use '../components/variables' as var;
+
 .nav-container{
     text-align: center;
     padding-top: 1rem;
@@ -6,7 +8,7 @@
     min-height: 100vh;
     grid-column-start: 1;
     position: relative;
-    background-color: white;
+    background-color: var.$bg-white;
     
     .nav{
         flex-direction: column;
@@ -21,18 +23,18 @@
             display: flex;
             flex-direction: column;
             .logo{
-                font-size: 1.875rem;
-                line-height: 2.25rem;
+                font-size: var.$text-3xl;
+                line-height: var.$text-3xl-line-height;
                 font-weight: 500;
             }
             .message{
-                background-color: #fed7aa;
-                border-radius: 9999px;
+                background-color: var.$orange-200;
+                border-radius: var.$rounded-full;
                 padding: 0.75rem 0.625rem;
             }
 
             .message:hover{
-                background-color: #fdba74;
+                background-color: var.$orange-300;
             }
         }
 
@@ -44,8 +46,8 @@
             flex-direction: column;
             
             ol{
-                border-radius: 9999px;
-                background-color: #e2e8f0;
+                border-radius: var.$rounded-full;
+                background-color: var.$slate-200;
                 width: fit-content;
                 padding: .25rem;
                 display: flex;
@@ -53,19 +55,19 @@
                 gap: .625rem;
 
                 li:first-child>a>svg{
-                    background-color: #6366f1;
+                    background-color: var.$indigo-500;
                 }
 
                 li:first-child>a>svg:hover{
-                    background-color: #6366f1;
+                    background-color: var.$indigo-500;
                 }
 
                 li>a>svg{
-                    border-radius: 9999px;
+                    border-radius: var.$rounded-full;
                     padding: .75rem .625rem;
                 }
                 li>a>svg:hover{
-                    background-color: #f1f5f9;
+                    background-color: var.$slate-100;
                 }
             }
         }
@@ -77,17 +79,31 @@
             flex-direction: column;
 
             a>svg{
-                background-color: #e2e8f0;
+                background-color: var.$slate-200;
                 padding: .625rem;
-                border-radius: 9999px;
+                border-radius: var.$rounded-full;
             }
         }
     }
 
 
-    @media (min-width: 1536px) {
+}
+
+@mixin nav-2xl{
+    .nav{
+        justify-content: space-around;
+    }
+}
+
+@mixin nav-dark{
+    .nav-container{
+        background-color: var.$slate-800;
         .nav{
-            justify-content: space-around;
+            .logo-container{
+                a:first-child{
+                    color: var.$bg-white;
+                }
+            }
         }
     }
 }

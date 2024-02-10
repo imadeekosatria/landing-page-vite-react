@@ -4,6 +4,7 @@ import ItemToBuy from "./Section/item-to-buy"
 import Transaction from "./Section/transaction"
 import Analytic from "./Section/analytic"
 import Search from "./Section/search"
+// import ThemeSwitcher from "./Section/theme-switch"
 import { PropTypes } from "prop-types"
 
 
@@ -19,6 +20,7 @@ const Section = ({prop}) => {
             <span>View and control your finances here!</span>
           </div>
           <div className="theme-search">
+            {/* <ThemeSwitcher/> */}
             <Search/>
           </div>
         </header>

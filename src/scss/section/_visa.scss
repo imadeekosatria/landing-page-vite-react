@@ -1,11 +1,11 @@
-$bg-color: #6366f1;
+@use '../components/variables' as var;
 .visa{
-    background-color: $bg-color;
+    background-color: var.$indigo-500;
     max-width: 24rem;
     position: relative;
     flex-grow: 1;
     padding: 1rem;
-    border-radius: 1.5rem;
+    border-radius: var.$rounded-3xl;
 
     .image-container{
         width: 100%;
@@ -35,21 +35,21 @@ $bg-color: #6366f1;
             align-items: center;
 
             span{
-                color: white;
+                color: var.$bg-white;
                 font-weight: 500;
-                font-size: 2.25rem;
-                line-height: 2.5rem;
+                font-size: var.$text-4xl;
+                line-height: var.$text-4xl-line-height;
             }
 
             svg{
                 width: 4rem;
-                fill: white;
+                fill: var.$bg-white;
             }
         }
 
         .bottom{
             padding: 0 1rem;
-            color: white;
+            color: var.$bg-white;
 
             .visa-number{
                 font-weight: 500;
@@ -63,14 +63,14 @@ $bg-color: #6366f1;
     }
 }
 
-@media (min-width: 1024px) {
+@mixin visa-lg{
     .visa{
         width: 20rem;
     }
 }
 
-@media (min-width: 1280px) {
+@mixin visa-xl{
     .visa{
-        width: 24rem;
+        width: 20rem;
     }
 }

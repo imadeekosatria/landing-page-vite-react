@@ -82,23 +82,20 @@ const ThemeSwitcher = () => {
           onClick={()=>{setIsClicked(!isClicked)}}
         />
         <div
-          className={`absolute top-16 -left-28 z-20 ${
+          className={`${
             isClicked ? "" : "hidden"
-          } flex gap-x-2 bg-white dark:bg-slate-800 rounded`}
+          }`}
         >
           <FontAwesomeIcon
             icon={faSun}
-            className="dark:text-white cursor-pointer p-4 rounded hover:bg-slate-200 dark:hover:bg-slate-700"
             onClick={()=>{handleToggle('light')}}
           />
           <FontAwesomeIcon
             icon={faMoon}
-            className="dark:text-white cursor-pointer p-4 rounded hover:bg-slate-200 dark:hover:bg-slate-700"
             onClick={()=>{handleToggle('dark')}}
           />
           <FontAwesomeIcon
             icon={faDesktop}
-            className="dark:text-white cursor-pointer p-4 rounded hover:bg-slate-200 dark:hover:bg-slate-700"
             onClick={()=>{handleToggle('system')}}
           />
         </div>

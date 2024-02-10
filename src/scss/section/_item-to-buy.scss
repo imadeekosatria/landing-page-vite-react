@@ -1,10 +1,8 @@
-$slate-200: #e2e8f0;
-$indigo-500: #6366f1;
-$slate-50:#f8fafc;
+@use '../components/variables' as var;
 
 .items-to-buy-container{
     min-width: 100%;
-    background-color: white;
+    background-color: var.$bg-white;
     display: flex;
     column-gap: 1rem;
 
@@ -26,11 +24,11 @@ $slate-50:#f8fafc;
                 flex-direction: column;
                 span:first-child{
                     font-weight: 500;
-                    font-size: 1.5rem;
-                    line-height: 2rem;
+                    font-size: var.$text-2xl;
+                    line-height: var.$text-2xl-line-height;
                 }
                 span:last-child{
-                    color: #94a3b8;
+                    color: var.$slate-400;
                 }
             }
         }
@@ -38,12 +36,13 @@ $slate-50:#f8fafc;
         .items-top{
             display: flex;
             justify-content: space-between;
+            
 
             div:first-child{
                 display: flex;
                 gap: .5rem;
                 span:first-child{
-                    color: #94a3b8;
+                    color: var.$slate-400;
                 }
                 span:last-child{
                     font-weight: 500;
@@ -55,6 +54,9 @@ $slate-50:#f8fafc;
                 display: flex;
                 column-gap: .5rem;
                 align-items: center;
+                background-color: transparent;
+                font-size: var.$text-base;
+                line-height: var.$text-base-line-height;
             }
         }
 
@@ -66,8 +68,8 @@ $slate-50:#f8fafc;
             justify-content: space-between;
 
             .pane{
-                background-color: $slate-200;
-                border-radius: .75rem;
+                background-color: var.$slate-200;
+                border-radius: var.$rounded-xl;
                 padding: 0 1rem;
                 width: 10rem;
                 flex-grow: 1;
@@ -77,8 +79,11 @@ $slate-50:#f8fafc;
                 
                 .item-label{
                     font-weight: 600;
-                    font-size: .875rem;
-                    line-height: 1.25rem;
+                    font-size: var.$text-sm;
+                    line-height: var.$text-sm-line-height;
+                    -webkit-user-select: none; /* Safari */
+                    -ms-user-select: none; /* IE 10 and IE 11 */
+                    user-select: none; /* Standard syntax */
                 }
             }
 
@@ -86,10 +91,10 @@ $slate-50:#f8fafc;
     }
 
     .separator{
-        background-color: #cbd5e1;
+        background-color: var.$slate-300;
         height: auto;
         width: .125rem;
-        border-radius: 9999px;
+        border-radius: var.$rounded-full;
     }
 
     .chat-container{
@@ -123,12 +128,12 @@ $slate-50:#f8fafc;
 
                     span{
                         padding: .5rem 1rem;
-                        background-color: $indigo-500;
+                        background-color: var.$indigo-500;
                         width: fit-content;
                         border-start-start-radius: .75rem;
                         border-end-start-radius: .75rem;
                         border-top-right-radius: .75rem;
-                        color: $slate-50;
+                        color: var.$slate-50;
                     }
                     img{
                         width: 2.5rem;
@@ -149,7 +154,7 @@ $slate-50:#f8fafc;
 
                     span{
                         padding: .5rem 1rem;
-                        background-color: $slate-200;
+                        background-color: var.$slate-200;
                         width: fit-content;
                         border-start-end-radius: .75rem;
                         border-end-end-radius: .75rem;
@@ -159,13 +164,13 @@ $slate-50:#f8fafc;
             }
 
             form>div{
-                background-color: $slate-200;
-                border-radius: .75rem;
+                background-color: var.$slate-200;
+                border-radius: var.$rounded-xl;
                 input[type="text"]{
                     background-color: inherit;
                     border: none;
                     width: 100%;
-                    border-radius: .75rem;
+                    border-radius: var.$rounded-xl;
                     padding: 1rem 1rem 0 1rem;
                 }
                 input[type="text"]:focus{
@@ -193,23 +198,14 @@ $slate-50:#f8fafc;
                     }
 
                     button{
-                        background-color: $indigo-500;
+                        background-color: var.$indigo-500;
                         padding: .5rem 1rem;
-                        color: $slate-50;
-                        border-radius: .5rem;
+                        color: var.$slate-50;
+                        border-radius: var.$rounded-lg;
                     }
                 }
             }
         }
-    }
-}
-@media (min-width: 1536px){
-    .pane{
-        width: 21rem;
-    }
-
-    .chat{
-        height: 15rem;
     }
 }
 
@@ -222,4 +218,50 @@ $slate-50:#f8fafc;
         transform: none;
         animation-timing-function: cubic-bezier(0,0,0.2,1);
     }
+}
+
+@mixin items-2xl{
+    .pane{
+        width: 21rem;
+    }
+
+    .chat{
+        height: 15rem;
+    }
+}
+
+@mixin items-to-buy-dark{
+    button{
+        color: var.$bg-white;
+    }
+    .items-to-buy-container{
+        background-color: var.$slate-800;
+        .list-items-container{
+            .items{
+                .pane{
+                    background-color: var.$slate-700;
+
+                    svg{
+                        color: var.$bg-white;
+                    }
+                }
+            }
+        }
+        .chat-container{
+            .container{
+                .chat{
+                    .from{
+                        span{
+                            background-color: var.$slate-600;
+                        }
+                    }
+                }
+                form>div{
+                    background-color: var.$slate-600;
+                    color: var.$bg-white;
+                }
+            }
+        }
+    }
+
 }
