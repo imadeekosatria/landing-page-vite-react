@@ -3,16 +3,16 @@ import Crown from "../../assets/crown.png"
 import { Tooltip } from "evergreen-ui"
 const GoToPremium = ()=>{
     return (
-        <Card className="border-2 dark:border-slate-700">
+        <Card className="sidebar-card">
             <CardTitle>Go to premium</CardTitle>
-            <div className="flex flex-col items-center gap-y-4">
-                <img src={Crown} alt="Crown" className="w-40"/>
-                <div className="flex flex-col">
-                    <span className="font-semibold">Need more features?</span>
-                    <span className="text-slate-400">Update your account to premium to get more features.</span>
+            <div className="go-to-premium">
+                <img src={Crown} alt="Crown"/>
+                <div>
+                    <span>Need more features?</span>
+                    <span>Update your account to premium to get more features.</span>
                 </div>
                 <Tooltip content="Get premium">
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="w-full bg-indigo-500 flex items-center justify-center text-white py-4 rounded-2xl">Get now</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Get now</a>
                 </Tooltip>
             </div>
         </Card>
