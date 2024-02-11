@@ -782,6 +782,7 @@ html {
   font-family: "Roboto", sans-serif;
   font-feature-settings: normal;
   font-variation-settings: normal;
+  scroll-behavior: smooth;
 }
 
 body {
